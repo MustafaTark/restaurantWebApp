@@ -1,0 +1,19 @@
+﻿@model restaurantWebApp.Dto.MealDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div style="height:10px"></div>
+<div>
+    <div>
+        <img src="@Url.Content("~/images/" + Model.Image)" alt="Sample Image" style="padding-left:0px; float:left;width:200px;height:250px;" />
+    </div>
+    <div>
+        <h1 style="padding-left:250px">@Model.Name</h1>
+    </div>
+    <div style="height:10px"></div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> 
+    <a asp-action="Index">Back to List</a>
+</div>

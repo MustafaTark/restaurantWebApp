@@ -1,0 +1,22 @@
+﻿@model restaurantWebApp.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div style="height:30px"></div>
+<div class="row">
+@foreach(var item in Model.Categories!){
+    
+    <div class="card text-white bg-primary mb-3" style="max-width: 20rem; margin-right:10px; float:left">
+      <a href="@Url.Content("/Categories/Details/" + item.Id )" class="list-group-item list-group-item-action flex-column align-items-start active">
+       <div>
+      <div class="card-header">@item.Name</div>
+      <div class="card-body">
+        
+        <p class="card-text">@item.Description</p>
+      </div>
+    </div>
+     </a>
+      </div>
+       
+}
+</div>

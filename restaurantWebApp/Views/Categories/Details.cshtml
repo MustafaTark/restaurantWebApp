@@ -1,0 +1,20 @@
+﻿@model restaurantWebApp.Dto.CategoryDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="row">
+@foreach(var m in Model.Meals!){
+    <div class="card text-white bg-primary mb-3" style="max-width: 14rem; padding:20px;padding-right:10px">
+        <a class="list-group-item list-group-item-action flex-column align-items-start active"
+        href="@Url.Content("/Meals/Details/" + m.Id )">
+            <h4 style="float:left">@m.Name</h4>
+
+            <img src="@Url.Content("~/images/" + m.Image)" alt="Sample Image" class="d-block user-select-none" width="180" height="230" aria-label="Placeholder: Image cap" focusable="false" style="float:left" />
+
+        </a>
+
+    </div>
+    <div style="max-width: 8rem;"></div>
+}
+</div>
