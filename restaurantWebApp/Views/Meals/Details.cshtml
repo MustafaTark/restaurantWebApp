@@ -3,17 +3,53 @@
 @{
     ViewData["Title"] = "Details";
 }
-<div style="height:10px"></div>
+<div style="height:30px"></div>
 <div>
-    <div>
-        <img src="@Url.Content("~/images/" + Model.Image)" alt="Sample Image" style="padding-left:0px; float:left;width:200px;height:250px;" />
+    <div style="margin-left:0px;float:left;">
+        <img src="@Url.Content("~/images/" + Model.Image)" alt="Sample Image" style="width:250px;height:270px; border-radius:20px" />
     </div>
-    <div>
-        <h1 style="padding-left:250px">@Model.Name</h1>
+    <div style="margin-left:290px">
+        <h1>@Model.Name</h1>
     </div>
     <div style="height:10px"></div>
+    <div style="margin-left:290px">
+        <p>@Model.Description</p>
+    </div>
+    <div style="height:10px"></div>
+   @* <div class="row">
+    @using (Html.BeginForm("Add", "Orders", FormMethod.Post))
+    {
+        <div class="form-group">
+
+            <input type="submit" value="Add To Order" class="btn btn-lg btn-primary" />
+
+        </div>
+    }
+    @using (Html.BeginForm("Add", "Orders", FormMethod.Post))
+    {
+        <div class="form-group">
+
+            <input type="submit" value="Add To Order" class="btn btn-lg btn-primary" />
+
+        </div>
+    }
+    </div>*@
+    @using (Html.BeginForm("Add", "Orders", FormMethod.Post))
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.Hidden("Id", Model.id)
+
+        
+        <div class="form-group">
+
+            <input type="submit" value="Add To Order" class="btn btn-lg btn-primary" />
+
+        </div>
+    }
+  @*  <button class="btn btn-lg btn-primary" type="button" style="margin-left:40px">Add To Cart</button>*@
 </div>
-<div>
+@*<div>
     <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> 
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@

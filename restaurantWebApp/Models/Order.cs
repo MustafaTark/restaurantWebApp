@@ -1,4 +1,6 @@
-﻿namespace restaurantWebApp.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace restaurantWebApp.Models
 {
     public class Order
     {
@@ -6,6 +8,7 @@
         public DateTime OrderDate { get; set; }
         public double Cost { get; set; }
         public LinkedList<Meal>? Meals { get; set; }
+       public int Quntity { get; set; }
         public Order()
         {
             Meals = new LinkedList<Meal>();

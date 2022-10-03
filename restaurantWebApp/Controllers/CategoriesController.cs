@@ -106,19 +106,18 @@ namespace restaurantWebApp.Controllers
         }
         private string UploadedFile(CategoriesViewModel model)
         {
-            string uniqueFileName = "none";
+            string uniqueFileName;
 
-            if (model.Image != null)
-            {
+          
 
                 string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
-                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Image.FileName;
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Image!.FileName;
                 string filePath = Path.Combine(uploadsFolder, uniqueFileName);
                 var fileStream = new FileStream(filePath, FileMode.Create);
                 
                 model.Image.CopyTo(fileStream);
                 
-            }
+            
             return uniqueFileName;
         }
     }
