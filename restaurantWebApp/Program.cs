@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using restaurantWebApp.Contracts;
-using restaurantWebApp.Data;
-using restaurantWebApp.Models;
-using restaurantWebApp.Repo;
+using restaurantWebApp_DAL.Contracts;
+using restaurantWebApp_DAL.Data;
+using restaurantWebApp_DAL.Models;
+using restaurantWebApp_DAL.Repo;
 using AutoMapper;
 using restaurantWebApp;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -17,7 +17,7 @@ builder.Services.AddScoped<IRepositoryBase<Meal>, MealRepositery>();
 builder.Services.AddScoped<IRepositoryBase<Category>, CategoryRepositery>();
 builder.Services.AddScoped<IRepositoryBase<Cart>, CartRepositery>();
 builder.Services.AddScoped<IRepositoryBase<Order>, OrderRepositery>();
-builder.Services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+//builder.Services.AddScoped<IAuthenticationManager, AuthenticationManager>();
 var builderIdentity = builder.Services.AddIdentityCore<Customer>(o => {
     o.Password.RequireDigit = true;
     o.Password.RequireLowercase = false;

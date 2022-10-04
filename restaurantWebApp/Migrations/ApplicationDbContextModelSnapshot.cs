@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using restaurantWebApp.Data;
+using restaurantWebApp_DAL.Data;
 
 #nullable disable
 
@@ -17,7 +17,7 @@ namespace restaurantWebApp.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.8")
+                .HasAnnotation("ProductVersion", "6.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -81,15 +81,15 @@ namespace restaurantWebApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7a809784-c2a3-4f27-890f-62be3a38b065",
-                            ConcurrencyStamp = "805dc3c2-bc98-459d-941b-bd5299f41c11",
+                            Id = "0eaf263a-d921-414f-a758-329f8eca41f7",
+                            ConcurrencyStamp = "0af47a75-7bbf-4bb5-ba83-8bd9ea11cad0",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         },
                         new
                         {
-                            Id = "cd166f38-bb23-40cc-968e-fc702a0c187b",
-                            ConcurrencyStamp = "61b335da-40c2-417a-82fb-699dcf4a98ad",
+                            Id = "4a6f62c0-e624-45ce-8a16-934e9f037fe3",
+                            ConcurrencyStamp = "ceb41859-8b6f-404b-bc4f-f3a8147ff885",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -367,6 +367,9 @@ namespace restaurantWebApp.Migrations
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Quntity")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

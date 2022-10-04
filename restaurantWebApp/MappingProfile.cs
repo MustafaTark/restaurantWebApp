@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using restaurantWebApp.Dto;
-using restaurantWebApp.Models;
+using restaurantWebApp_DAL.Dto;
+using restaurantWebApp_DAL.Models;
 
 namespace restaurantWebApp
 {
